@@ -1,5 +1,7 @@
 # vprok parser test task
 
+[![CI](https://github.com/Raphailinc/vprok-parser-test-task/actions/workflows/ci.yml/badge.svg)](https://github.com/Raphailinc/vprok-parser-test-task/actions/workflows/ci.yml)
+
 [English](README.md) · [Русский](README.ru.md)
 
 A two-part test assignment for extracting product and catalog data.
@@ -26,3 +28,5 @@ npm run lint
 ## Scope and implementation notes
 
 See the Russian guide for the Puppeteer product/region command. Live results depend on the target site, its current markup, availability and access policy. No automated behavioral tests are included.
+
+Requires Node.js 22.17+; use the committed npm lockfile with `npm ci`.

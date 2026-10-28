@@ -1,5 +1,7 @@
 # vprok.ru parser (test task)
 
+[![CI](https://github.com/Raphailinc/vprok-parser-test-task/actions/workflows/ci.yml/badge.svg)](https://github.com/Raphailinc/vprok-parser-test-task/actions/workflows/ci.yml)
+
 ## Setup
 
 ```bash
@@ -35,3 +37,5 @@ Output in current directory:
 npm run lint
 npm run format
 ```
+
+Требуется Node.js 22.17+; зависимости устанавливаются через `npm ci` с сохранённым lockfile.
