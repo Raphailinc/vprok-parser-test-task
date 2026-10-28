@@ -1,41 +1,39 @@
-# vprok.ru parser (test task)
+# vprok parser test task
 
 [![CI](https://github.com/Raphailinc/vprok-parser-test-task/actions/workflows/ci.yml/badge.svg)](https://github.com/Raphailinc/vprok-parser-test-task/actions/workflows/ci.yml)
 
-## Setup
+[English](README.md) · [Русский](README.ru.md)
+
+Тестовое задание из двух независимых частей: сбор сведений со страницы товара через Puppeteer и выгрузка каталога через API.
+
+## Установка
+
+Требуется Node.js 22.17+. Установка по сохранённому lockfile:
 
 ```bash
-npm install
+npm ci
 ```
 
-## Part 1 — Puppeteer
+## Страница товара через Puppeteer
 
 ```bash
 node puppeteer.js "https://www.vprok.ru/product/domik-v-derevne-dom-v-der-moloko-ster-3-2-950g--309202" "Санкт-Петербург и область"
 ```
 
-Outputs in current directory:
-- `screenshot.jpg` — full page screenshot
-- `product.txt` — product fields:
-  - `price`
-  - `priceOld` (optional)
-  - `rating`
-  - `reviewCount`
+Результаты в текущем каталоге: `screenshot.jpg` — снимок страницы, `product.txt` — цена, предыдущая цена при наличии, рейтинг и число отзывов. Первый запуск может потребовать скачанный Puppeteer браузер.
 
-## Part 2 — API parser
+## Каталог через API
 
 ```bash
 node api-parser.js "https://www.vprok.ru/catalog/7382/pomidory-i-ovoschnye-nabory"
 ```
 
-Output in current directory:
-- `products-api.txt`
+Результат записывается в `products-api.txt`.
 
-## Lint/format (optional)
+## Проверки
 
 ```bash
 npm run lint
-npm run format
 ```
 
-Требуется Node.js 22.17+; зависимости устанавливаются через `npm ci` с сохранённым lockfile.
+CI проверяет линтер и зависимости. Поведенческих автотестов нет. Живой результат зависит от доступности сайта, его разметки, API и правил доступа; успешный линтер не подтверждает успешный сбор данных с сайта.
