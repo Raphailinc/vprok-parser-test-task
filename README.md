@@ -1,37 +1,28 @@
-# vprok.ru parser (test task)
+# vprok parser test task
 
-## Setup
+[English](README.md) · [Русский](README.ru.md)
 
-```bash
-npm install
-```
+A two-part test assignment for extracting product and catalog data.
 
-## Part 1 — Puppeteer
+## What it does
 
-```bash
-node puppeteer.js "https://www.vprok.ru/product/domik-v-derevne-dom-v-der-moloko-ster-3-2-950g--309202" "Санкт-Петербург и область"
-```
+- Use Puppeteer to visit a product page and save a screenshot and product fields.
+- Query a catalog API and save product data to a text file.
+- Keep the browser and API approaches as separate entry points.
 
-Outputs in current directory:
-- `screenshot.jpg` — full page screenshot
-- `product.txt` — product fields:
-  - `price`
-  - `priceOld` (optional)
-  - `rating`
-  - `reviewCount`
-
-## Part 2 — API parser
+## Run locally
 
 ```bash
+npm ci
 node api-parser.js "https://www.vprok.ru/catalog/7382/pomidory-i-ovoschnye-nabory"
 ```
 
-Output in current directory:
-- `products-api.txt`
-
-## Lint/format (optional)
+## Checks
 
 ```bash
 npm run lint
-npm run format
 ```
+
+## Scope and implementation notes
+
+See the Russian guide for the Puppeteer product/region command. Live results depend on the target site, its current markup, availability and access policy. No automated behavioral tests are included.
